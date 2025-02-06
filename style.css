@@ -40,3 +40,21 @@ div.st-emotion-cache-1y4p8pa {
     background-color: #f1f1f1 !important;
     z-index: 9999 !important;
 }
+
+h1 {
+    color: rebeccapurple !important;
+    font-size:xx-large !important;
+}
+
+p {
+    font-size:small !important;
+}
+
+div.st-emotion-cache-0 {
+    max-height: 600px !important;
+    overflow: scroll !important;
+}
+
+body {
+    overflow-y: hidden !important;
+}

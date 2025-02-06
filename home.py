@@ -32,8 +32,8 @@ def get_conversation_string():
     return conversation_string
 
 st.set_page_config(
-    page_title="Softsquare AI",
-    page_icon="🤖",
+    page_title="MM - AI Chatbot",
+    page_icon="https://raw.githubusercontent.com/softsquareadmin/chatbotgallery/main/Media%20Manager%203.png",
 )
 
 load_dotenv()
@@ -57,9 +57,81 @@ st.markdown("""
                    text-align: center;
                    background-color: #f1f1f1;
                    z-index: 9">
-        Chat with Media Manager AI Bot
+        Media Manager - AI Chatbot
+            <p>Media Manager is a Salesforce AppExchange product by Softsquare, <br> designed to streamline and manage your media assets within Salesforce.</p>
     </h1>
 """, unsafe_allow_html=True)
+
+
+st.markdown(
+    """
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    ._container_gzau3_1, ._profileContainer_gzau3_53,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    /* Ensure the entire page uses a flexbox layout */
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Chat container styling */
+    .stApp {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Chat input should stick to the bottom */
+    .stChatInput {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 800px; /* Adjust based on your design */
+        margin: 0 auto;
+        margin-bottom: 50px;
+        z-index: 9999;
+        border-top: 1px solid #ddd;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <style>
+    /* Hide the span tag by class name */
+    .st-emotion-cache-gi0tri.e1nzilvr1 {
+        display: none !important;
+    }
+
+    /* Optional: Hide the span tag with a specific data-testid */
+    [data-testid="stHeaderActionElements"] {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["Hi there, I am your Media Manager Assist. How can I help you today?"]
@@ -280,7 +352,7 @@ with response_container:
     if st.session_state['responses']:
         for i in range(len(st.session_state['responses'])):
             response = f"<div style='font-size:0.875rem;line-height:1.75;white-space:normal;'>{st.session_state['responses'][i]}</div>"
-            message(response,allow_html=True,key=str(i),logo=('https://raw.githubusercontent.com/Maniyuvi/SoftsquareChatbot/main/SS512X512.png'))
+            message(response,allow_html=True,key=str(i),logo=('https://raw.githubusercontent.com/softsquareadmin/chatbotgallery/main/Media%20Manager%203.png'))
             if i < len(st.session_state['requests']):
                 request = f"<meta name='viewport' content='width=device-width, initial-scale=1.0'><div style='font-size:.875rem'>{st.session_state['requests'][i]}</div>"
                 message(request, allow_html=True,is_user=True,key=str(i)+ '_user',logo='https://raw.githubusercontent.com/Maniyuvi/SoftsquareChatbot/main/generic-user-icon-13.jpg')
