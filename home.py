@@ -104,10 +104,10 @@ st.markdown(
     .stChatInput {
         position: fixed;
         bottom: 0;
-        width: 100%;
+        width: 95%;
         max-width: 800px; /* Adjust based on your design */
         margin: 0 auto;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
         z-index: 9999;
         border-top: 1px solid #ddd;
     }
@@ -154,10 +154,12 @@ if 'email' not in st.session_state:
 embeddings = OpenAIEmbeddings()
 controller = CookieController()
 
-with st.sidebar:
-    emailInput = st.text_input("Enter Your Email")
-    if emailInput != '' and emailInput != None:
-        controller.set("email_id",emailInput)
+# with st.sidebar:
+#     emailInput = st.text_input("Enter Your Email")
+#     if emailInput != '' and emailInput != None:
+#         controller.set("email_id",emailInput)
+
+controller.set("email_id","")
 
 email_id = str(controller.get('email_id'))
 user_id = controller.get("ajs_anonymous_id")
